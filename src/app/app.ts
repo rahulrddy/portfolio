@@ -38,14 +38,14 @@ interface EducationItem {
   styleUrl: './app.css'
 })
 export class App {
-  readonly name = 'Rahul Reddy';
+  readonly name = 'Rahul Origanti';
   readonly title = 'Senior Software Engineer';
   readonly location = "O'Fallon, Missouri";
   readonly summary =
     'I build high-trust, high-scale digital products across payments, insurance, and investment platforms with a strong focus on user journeys, secure APIs, and delivery speed.';
 
   readonly email = 'Rahul.origanti@gmail.com';
-  readonly phone = '737-781-4919';
+  readonly phone = '636-317-3322';
   readonly phoneHref = `tel:${this.phone.replace(/-/g, '')}`;
 
   readonly quickStats: QuickStat[] = [
@@ -160,14 +160,14 @@ export class App {
 
   readonly education: EducationItem[] = [
     {
-      degree: 'Doctor of Business Administration',
-      institution: 'Westcliff University, Irvine, California',
-      period: '2020 - Present'
+      degree: 'Master of Science, Computer and Information Sciences',
+      institution: 'San Francisco Bay University, Fremont, California',
+      period: '2014 - 2016'
     },
     {
-      degree: 'Master of Science, Computer and Information Sciences',
-      institution: 'Northwestern Polytechnic University, Fremont, California',
-      period: '2015 - 2016'
+      degree: 'Bachelor of Science, Computer Science',
+      institution: 'Jawaharlal Nehru Technological University, Hyderabad, India',
+      period: '2010 - 2014'
     }
   ];
 }

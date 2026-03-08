@@ -260,9 +260,16 @@ h1 {
   font-size: 0.95rem;
 }
 
+.visual-subtitle {
+  margin: 0.45rem 0 0;
+  color: var(--text-300);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .radar {
   position: relative;
-  width: min(100%, 340px);
+  width: min(100%, 360px);
   aspect-ratio: 1;
   align-self: center;
   margin-top: 0.9rem;
@@ -295,35 +302,60 @@ h1 {
 .node,
 .core {
   position: absolute;
-  font-size: 0.73rem;
+  font-size: 0.66rem;
   font-weight: 700;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(7, 34, 54, 0.8);
-  padding: 0.35rem 0.65rem;
+  padding: 0.3rem 0.54rem;
+  white-space: nowrap;
 }
 
 .node-a {
-  top: 8%;
-  left: 16%;
+  top: 5%;
+  left: 28%;
   color: var(--cyan);
 }
 
 .node-b {
-  top: 20%;
-  right: 10%;
+  top: 22%;
+  right: 4%;
   color: var(--mint);
 }
 
 .node-c {
-  bottom: 18%;
-  left: 8%;
+  bottom: 14%;
+  left: 2%;
   color: var(--amber);
 }
 
 .node-d {
-  bottom: 10%;
-  right: 14%;
+  bottom: 3%;
+  right: 26%;
+  color: var(--rose);
+}
+
+.node-e {
+  top: 22%;
+  left: 2%;
+  color: var(--amber);
+}
+
+.node-f {
+  top: 46%;
+  right: -2%;
+  color: var(--cyan);
+}
+
+.node-g {
+  bottom: 32%;
+  right: 0;
+  color: var(--mint);
+}
+
+.node-h {
+  bottom: 32%;
+  left: 0;
   color: var(--rose);
 }
 
@@ -331,6 +363,23 @@ h1 {
   color: var(--text-100);
   background: rgba(8, 35, 53, 0.95);
   border-color: rgba(65, 217, 255, 0.55);
+}
+
+.focus-list {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.46rem;
+}
+
+.focus-list span {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-100);
+  font-size: 0.72rem;
+  padding: 0.28rem 0.52rem;
 }
 
 .stats {
@@ -652,6 +701,10 @@ h2 {
   .hero-copy,
   .hero-visual {
     padding: 1.25rem;
+  }
+
+  .radar {
+    width: min(100%, 320px);
   }
 
   .stats,
