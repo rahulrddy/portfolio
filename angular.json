@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio-new": {
+    "portfolio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -18,11 +18,6 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "outputMode": "static",
-            "outputPath": {
-              "base": "dist/portfolio",
-              "browser": ""
-            },
             "assets": [
               {
                 "glob": "**/*",
@@ -61,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "portfolio-new:build:production"
+              "buildTarget": "portfolio:build:production"
             },
             "development": {
-              "buildTarget": "portfolio-new:build:development"
+              "buildTarget": "portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
