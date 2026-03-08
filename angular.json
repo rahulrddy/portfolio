@@ -18,6 +18,11 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "outputMode": "static",
+            "outputPath": {
+              "base": "dist/portfolio",
+              "browser": "browser"
+            },
             "assets": [
               {
                 "glob": "**/*",
