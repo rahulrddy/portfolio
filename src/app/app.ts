@@ -49,7 +49,7 @@ export class App {
   readonly phoneHref = `tel:${this.phone.replace(/-/g, '')}`;
 
   readonly quickStats: QuickStat[] = [
-    { value: '8+', label: 'Years in software engineering' },
+    { value: '10+', label: 'Years in software engineering' },
     { value: '2022-Present', label: 'Senior Engineer at Mastercard' },
     { value: '5', label: 'Enterprise products delivered' }
   ];
