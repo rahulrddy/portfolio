@@ -161,15 +161,20 @@
   </section>
 
   <section class="section contact" id="contact">
+    <div class="section-head reveal">
+      <p class="section-kicker">Contact</p>
+    </div>
+
     <article class="contact-card reveal">
-      <p class="section-kicker">Let's Build</p>
-      <h2>Open to impactful engineering opportunities and collaborations.</h2>
-      <p>
-        Reach out for senior engineering roles, platform modernization initiatives, or product-focused software consulting.
-      </p>
+      <div class="contact-body">
+        <h2>Open to Senior Software Engineering opportunities.</h2>
+        <p class="contact-description">
+          I am available for full-time roles focused on Angular UI engineering, full-stack product development, and enterprise platform modernization. For interviews, project discussions, or collaboration inquiries, please contact me using the details below.
+        </p>
+      </div>
       <div class="contact-links">
-        <a [href]="'mailto:' + email">{{ email }}</a>
-        <a [href]="phoneHref">{{ phone }}</a>
+        <a [href]="'mailto:' + email" aria-label="Email Rahul">{{ email }}</a>
+        <a [href]="phoneHref" aria-label="Call Rahul">{{ phone }}</a>
       </div>
     </article>
   </section>

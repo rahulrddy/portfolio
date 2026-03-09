@@ -9,7 +9,7 @@ export class PortfolioDataService {
   readonly title = 'Senior Software Engineer';
   readonly location = "O'Fallon, Missouri";
   readonly summary =
-    'I build high-trust, high-scale digital products across payments, insurance, and investment platforms with a strong focus on user journeys, secure APIs, and delivery speed.';
+    'Senior full-stack software engineer with 10+ years of experience building secure, scalable digital platforms across payments, insurance, and investment domains. Specializes in Angular-driven UI development, API integration, and engineering practices that improve reliability, performance, and delivery velocity.';
 
   readonly email = 'Rahul.origanti@gmail.com';
   readonly phone = '636-317-3322';
