@@ -1,0 +1,24 @@
+# Secrets - never commit
+.env
+.env.*.local
+
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+/tmp
+/out-tsc
+
+# Angular cache
+/.angular
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

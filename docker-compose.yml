@@ -10,6 +10,6 @@ services:
     restart: unless-stopped
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN=PASTE_YOUR_TUNNEL_TOKEN_HERE
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     depends_on:
       - portfolio
