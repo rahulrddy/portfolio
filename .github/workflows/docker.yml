@@ -1,0 +1,71 @@
+name: Docker image
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  docker:
+    name: Build, test and publish image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build image for the Intel NAS
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          push: false
+          tags: portfolio:ci
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Verify the NAS Compose configuration
+        run: docker compose -f deploy/docker-compose.yml config --quiet
+
+      - name: Verify the running image
+        run: sh scripts/test-image.sh portfolio:ci
+
+      - name: Log in to GitHub Container Registry
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish the tested image
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          docker tag portfolio:ci "$IMAGE:$COMMIT_SHA"
+          docker tag portfolio:ci "$IMAGE:latest"
+          docker push "$IMAGE:$COMMIT_SHA"
+          docker push "$IMAGE:latest"
+          {
+            echo "Published \`$IMAGE:latest\` and \`$IMAGE:$COMMIT_SHA\`."
+            echo
+            echo 'On the NAS: `docker compose pull && docker compose up -d`.'
+          } >> "$GITHUB_STEP_SUMMARY"

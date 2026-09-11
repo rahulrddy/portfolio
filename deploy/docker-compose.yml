@@ -1,0 +1,16 @@
+# Copy this file to the portfolio directory on the NAS.
+# Update with: docker compose pull && docker compose up -d
+name: portfolio
+
+services:
+  portfolio:
+    image: ghcr.io/rahulrddy/portfolio:${IMAGE_TAG:-latest}
+    container_name: portfolio
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+    name: ${PROXY_NETWORK:-web}

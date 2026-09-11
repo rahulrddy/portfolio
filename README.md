@@ -2,6 +2,26 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
 
+## Run on the NAS with a published image
+
+GitHub Actions builds and tests the Docker image, then publishes
+`ghcr.io/rahulrddy/portfolio:latest` on successful pushes to `master`, following
+the same GitHub Container Registry workflow as Ledger. The image targets the
+Intel NAS (`linux/amd64`).
+
+Copy `deploy/docker-compose.yml` to the portfolio directory on the NAS. Once
+the first image is published and GHCR access is configured, updates need only:
+
+```sh
+docker compose pull
+docker compose up -d
+```
+
+The app keeps its `/portfolio/` path, `portfolio` container name, and shared
+`web` network for the existing Cloudflare gateway. See
+[the NAS deployment guide](docs/deploying-to-the-nas.md) for first deployment,
+replacing the current source build, authentication, and rollback.
+
 ## Development server
 
 To start a local development server, run:
