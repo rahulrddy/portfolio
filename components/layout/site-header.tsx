@@ -14,24 +14,24 @@ function LinkedInIcon() {
 
 export function SiteHeader() {
   return (
-    <header className="relative z-30 mx-auto grid h-24 w-full max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-6 md:px-10 lg:px-14">
+    <header className="relative z-30 mx-auto flex w-full max-w-[1600px] flex-col gap-4 px-4 pb-2 pt-4 sm:px-6 md:px-10 lg:grid lg:h-24 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-0 lg:px-14 lg:py-0 2xl:px-16">
       <nav
-        className="col-start-2 flex rounded-full border border-white/10 bg-white/[0.035] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,.04)] backdrop-blur-xl"
+        className="order-2 mx-auto flex rounded-full border border-white/10 bg-white/[0.035] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,.04)] backdrop-blur-xl lg:order-none lg:col-start-2"
         aria-label="Primary navigation"
       >
-        <a href="#about" className="relative rounded-full px-6 py-2.5 text-sm font-medium text-white">
+        <a href="#about" className="relative rounded-full px-5 py-2.5 text-sm font-medium text-white sm:px-6">
           <motion.span
             layoutId="active-navigation"
             className="absolute inset-0 rounded-full border border-amber-300/25 bg-gradient-to-b from-amber-300/10 to-white/[0.035] shadow-[0_8px_28px_rgba(245,185,76,.07)]"
           />
           <span className="relative">About</span>
         </a>
-        <a href="#work" className="rounded-full px-6 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+        <a href="#work" className="rounded-full px-5 py-2.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white sm:px-6">
           Work
         </a>
       </nav>
 
-      <div className="col-start-3 flex items-center justify-self-end gap-4 md:gap-5">
+      <div className="order-1 flex min-h-9 items-center justify-center gap-4 sm:justify-end md:gap-5 lg:order-none lg:col-start-3 lg:justify-self-end">
         <a
           href={siteConfig.links.linkedin}
           target="_blank"
@@ -50,11 +50,11 @@ export function SiteHeader() {
         >
           <Github className="size-5" />
         </a>
-        <span className="hidden h-7 w-px bg-white/10 sm:block" aria-hidden="true" />
+        <span className="h-7 w-px bg-white/10" aria-hidden="true" />
         <a
           href={siteConfig.links.resume}
           download
-          className="group hidden items-center gap-2 border-b border-amber-300/60 py-1.5 text-sm text-zinc-200 transition-colors hover:border-amber-200 hover:text-amber-200 sm:inline-flex"
+          className="group inline-flex items-center gap-2 border-b border-amber-300/60 py-1.5 text-sm text-zinc-200 transition-colors hover:border-amber-200 hover:text-amber-200"
         >
           Resume
           <Download className="size-4 transition-transform group-hover:translate-y-0.5" />
