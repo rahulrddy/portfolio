@@ -25,7 +25,7 @@ export function Hero() {
       >
         <div className="absolute left-[14%] top-[17%] aspect-square w-[62%] rounded-full border border-amber-200/[0.10] bg-[radial-gradient(circle_at_60%_35%,rgba(244,190,91,.08),transparent_55%)]" />
         <Image
-          src="/images/rahul-origanti.png"
+          src="/images/rahul-origanti.webp"
           alt="Rahul Origanti"
           fill
           priority
